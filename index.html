@@ -1,185 +1,168 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>GlobalVolunteer | Argentina to the World</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>GlobalVolunteer 2027 | Connect the World</title>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&amp;display=swap" rel="stylesheet">
 <style>
 :root {
---bg-body: #f4f7f5;
+--bg-body: #f0f4f8;
 --brand-green: #1b4332;
---brand-light-green: #40916c;
---brand-accent: #ffb703;
+--brand-light-green: #2d6a4f;
+--brand-accent: #ff9f1c;
 --white: #ffffff;
---text-main: #2d3436;
---shadow: 0 10px 30px rgba(0,0,0,0.08);
+--text-main: #1a1c1a;
+--shadow: 0 12px 40px rgba(0,0,0,0.12);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-body { background-color: var(--bg-body); color: var(--text-main); overflow-x: hidden; }
-/* APP-STYLE HERO SECTION */
+body { background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; }
 header {
-background: linear-gradient(135deg, #1b4332 0%, #081c15 100%);
-padding: 60px 24px 100px;
-text-align: center;
-color: var(--white);
-border-bottom-left-radius: 40px;
-border-bottom-right-radius: 40px;
+background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=1600&q=80');
+background-size: cover; background-position: center;
+padding: 100px 20px; text-align: center; color: var(--white);
+border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;
 }
-header h1 { font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; }
-header p { opacity: 0.9; font-weight: 300; font-size: 1rem; }
-.container { max-width: 1100px; margin: auto; padding: 0 20px; }
-/* FLOATING SEARCH BAR */
+header h1 { font-size: 2.8rem; letter-spacing: -1px; }
+.container { max-width: 1200px; margin: auto; padding: 0 20px; }
+/* ADVANCED SEARCH AREA */
 .search-area {
-background: rgba(255, 255, 255, 0.9);
-backdrop-filter: blur(10px);
-margin-top: -50px;
-padding: 25px;
-border-radius: 24px;
-box-shadow: var(--shadow);
-border: 1px solid rgba(255,255,255,0.3);
+background: var(--white); margin-top: -60px; padding: 30px;
+border-radius: 30px; box-shadow: var(--shadow);
 }
-.main-input-group { position: relative; margin-bottom: 15px; }
-.main-input-group i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #999; }
-.main-input-group input { width: 100%; padding: 16px 16px 16px 45px; border-radius: 16px; border: 1px solid #eee; outline: none; font-size: 1rem;
-}
-.filter-pills { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; }
+.search-row { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
+.search-row input { flex: 2; min-width: 250px; padding: 15px 20px; border-radius: 15px; border: 1px solid #ddd; outline: none; font-size: 1rem; }
+.search-row select { flex: 1; padding: 15px; border-radius: 15px; border: 1px solid #ddd; outline: none; cursor: pointer; }
+.filter-pills { display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; scrollbar-width: none; }
 .filter-pills::-webkit-scrollbar { display: none; }
-.pill { background: var(--white); padding: 8px 20px; border-radius: 50px; white-space: nowrap; border: 1px solid #eee; font-size: 0.85rem; cursor: pointer; transition: 0.3s;
+.pill { background: #e9ecef; padding: 10px 22px; border-radius: 50px; white-space: nowrap; cursor: pointer; transition: 0.3s; font-weight: 600; font-size: 0.85rem; border: none;
 }
-.pill.active { background: var(--brand-green); color: var(--white); border-color: var(--brand-green); }
-/* MODERN CARD GRID */
+.pill.active { background: var(--brand-green); color: var(--white); }
+/* GLOBAL GRID */
 .grid {
-display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-gap: 25px; margin-top: 40px;
+display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+gap: 30px; margin-top: 40px; padding-bottom: 60px;
 }
 .card {
-background: var(--white); border-radius: 28px; overflow: hidden;
-box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.02);
-transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-animation: fadeIn 0.6s ease forwards;
+background: var(--white); border-radius: 25px; overflow: hidden;
+box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s;
 }
-.card:hover { transform: translateY(-10px); }
-.card-header { height: 220px; position: relative; }
-.card-header img { width: 100%; height: 100%; object-fit: cover; }
-.price-badge {
-position: absolute; bottom: 15px; left: 15px;
-background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px);
-color: white; padding: 6px 14px; border-radius: 12px; font-weight: 700; font-size: 0.9rem;
+.card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+.card-img { height: 200px; background-size: cover; background-position: center; position: relative; }
+.continent-tag { position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.9); padding: 5px 12px; border-radius: 10px;
+font-size: 0.75rem; font-weight: 700; color: var(--brand-green);
 }
-.card-body { padding: 24px; }
-.card-tag { color: var(--brand-light-green); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; display: block;
-}
-.card-title { font-size: 1.3rem; margin-bottom: 12px; color: #1a1a1a; line-height: 1.2; }
-.info-item { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: #666; font-size: 0.9rem; }
-.info-item i { color: var(--brand-light-green); width: 16px; }
+.card-content { padding: 25px; }
+.card-tag { color: var(--brand-light-green); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+.card-title { font-size: 1.25rem; margin: 10px 0; color: #111; line-height: 1.3; }
+.details { font-size: 0.9rem; color: #555; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.details i { color: var(--brand-accent); width: 16px; }
 .btn-apply {
-width: 100%; background: var(--brand-green); color: white; border: none;
-padding: 14px; border-radius: 16px; margin-top: 20px; font-weight: 700;
-cursor: pointer; transition: 0.3s;
+width: 100%; padding: 15px; border-radius: 15px; border: none;
+background: var(--brand-green); color: white; font-weight: 700;
+margin-top: 15px; cursor: pointer; transition: 0.3s;
 }
 .btn-apply:hover { background: var(--brand-light-green); }
-/* TRAVEL TIPS SECTION */
-.tips-container {
-margin-top: 60px; background: var(--white); padding: 35px; border-radius: 30px;
-box-shadow: var(--shadow);
-}
-@keyframes fadeIn {
-from { opacity: 0; transform: translateY(20px); }
-to { opacity: 1; transform: translateY(0); }
-}
-@media (max-width: 600px) {
-header h1 { font-size: 1.7rem; }
-.grid { grid-template-columns: 1fr; }
-}
+/* INFO SECTION */
+.global-tips { background: #1b4332; color: white; padding: 60px 20px; border-radius: 40px; margin-bottom: 60px; }
+.tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+@media (max-width: 600px) { header h1 { font-size: 2rem; } }
 </style>
 </head>
 <body>
 <header>
 </header><div class="container">
-<h1>Travel &amp; Impact 2027 🌎</h1>
-<p>Low-cost volunteering for Argentine travelers</p>
+<h1>Global Missions Jan-Feb 2027</h1>
+<p>Explore all 5 continents through verified low-cost volunteering</p>
 </div>
 
 <div class="container">
 <section class="search-area">
-</section><div class="main-input-group">
-
-<input id="searchInput" placeholder="Where do you want to go?" onkeyup="filter()" type="text">
+</section><div class="search-row">
+<input id="searchInput" placeholder="Search by country, skill or keywords..." onkeyup="filter()" type="text">
+<select id="continentFilter" onchange="filter()"><option value="">All Continents</option><option value="Europe">Europe</option><option value="Americas">Americas</option><option value="Asia">Asia</option><option value="Africa">Africa</option><option value="Oceania">Oceania</option></select>
 </div>
 <div class="filter-pills">
-<div class="pill active" onclick="setCategory(this, '')">All Projects</div>
-<div class="pill" onclick="setCategory(this, 'Eco')">Eco &amp; Farm</div>
-<div class="pill" onclick="setCategory(this, 'Hostel')">Hostel Help</div>
-<div class="pill" onclick="setCategory(this, 'Social')">Social Impact</div>
-<div class="pill" onclick="setCategory(this, 'Brazil')">Brazil 🇧🇷</div>
+<button class="pill active" onclick="setCat(this, '')">All Types</button>
+<button class="pill" onclick="setCat(this, 'Eco')">Eco &amp; Farming</button>
+<button class="pill" onclick="setCat(this, 'Social')">Social Work</button>
+<button class="pill" onclick="setCat(this, 'Education')">Education</button>
+<button class="pill" onclick="setCat(this, 'Animals')">Animal Rescue</button>
 </div>
 
 <div id="grid" class="grid">
 </div>
-<section class="tips-container">
-</section><h2 style="margin-bottom: 20px;">Traveler's Handbook (Argentina Edition)</h2>
-<div style="">
+<section class="global-tips">
+</section><h2 style="margin-bottom: 30px; text-align: center;">Worldwide Volunteering Essentials</h2>
+<div class="tips-grid">
 <div>
-<b style="">ID &amp; Passport:</b>
-<p style="margin-top: 5px;">Traveling within Mercosur? Your DNI is all you need!</p>
+<h3> Visas</h3>
+<p>Argentines don't need visas for most of Europe &amp; SE Asia. Check
+e-visas for Africa and Australia at least 2 months before 2027.</p>
 </div>
 <div>
-<b style="">Budgeting:</b>
-<p style="margin-top: 5px;">Remember to check the "Dólar Tarjeta" rate for international fees.</p>
+<h3> Budget Flights</h3>
+<p>Use "Skyscanner" or "Google Flights" for Jan-Feb. Booking 6 months in advance from Argentina can save you up to 40%.</p>
 </div>
 <div>
-<b style="">Health:</b>
-<p style="margin-top: 5px;">Don't forget your Yellow Fever certificate for tropical destinations.</p>
+<h3> Language</h3>
+<p>English is the bridge. Most hosts in Asia and Africa only require basic conversational English to start.</p>
 </div>
 </div>
 
-<footer style="padding: 40px; text-align: center; opacity: 0.5;">
-Empowering the Argentine traveling community - 2027
-</footer>
 </div>
 <script>
 const programs = [
-{ name: "Sea Turtle Conservation", country: "Brazil", city: "Praia do Forte", cat: "Eco", price: "49 USD", img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=500", inclusion: "Shared dorm included", duration: "2-4 weeks" },
-{ name: "Boutique Hostel Staff", country: "Brazil", city: "Florianopolis", cat: "Hostel", price: "0 USD", img: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=500", inclusion: "Dorm + Breakfast", duration: "1 month" },
-{ name: "Education Support Project", country: "Peru", city: "Cusco", cat: "Social", price: "0 USD", img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=500", inclusion: "Private room provided", duration: "3-8 weeks" },
-{ name: "Organic Cacao Farm", country: "Colombia", city: "Minca", cat: "Eco", price: "30 USD", img: "https://images.unsplash.com/photo-1551048417-649069695d85?auto=format&fit=crop&w=500", inclusion: "Full board (3 meals)", duration: "2 weeks" },
-{ name: "Community Manager Beca", country: "Portugal", city: "Lisbon", cat: "Social", price: "ESC Grant", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500", inclusion: "Flight + Food + Accommodation", duration: "3 months" },
-{ name: "Surf House Receptionist", country: "Uruguay", city: "La Paloma", cat: "Hostel", price: "0 USD", img: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=500", inclusion: "Dorm + Free Bike", duration: "1 month" }
+// AMERICAS
+{ name: "Organic Farm & Reforestation", country: "Costa Rica", continent: "Americas", city: "Monteverde", cat: "Eco", price: "0 USD", img: "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=500", incl: "Food + Cabin" },
+{ name: "Surf Hostel Reception", country: "Brazil", continent: "Americas", city: "Itacaré", cat: "Social", price: "49 USD", img: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=500", incl: "Breakfast + Surf Lessons" },
+// EUROPE
+{ name: "Youth Center Assistant (ESC)", country: "Germany", continent: "Europe", city: "Berlin", cat: "Social", price: "0 USD", img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500", incl: "Everything Paid (EU Grant)" },
+{ name: "Husky Farm Helper", country: "Norway", continent: "Europe", city: "Tromsø", cat: "Animals", price: "0 USD", img: "https://images.unsplash.com/photo-1534145331692-06774659f635?auto=format&fit=crop&w=500", incl: "Extreme Winter Gear + Food" },
+// ASIA
+{ name: "English Teacher in Rural School", country: "Thailand", continent: "Asia", city: "Chiang Mai", cat: "Education", price: "0 USD", img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=500", incl: "Local Guesthouse" },
+{ name: "Elephant Sanctuary Helper", country: "Sri Lanka", continent: "Asia", city: "Kandy", cat: "Animals", price: "30 USD", img: "https://images.unsplash.com/photo-1585970480901-90d6bb2a48b5?auto=format&fit=crop&w=500", incl: "Shared Room + Tours" },
+// AFRICA
+{ name: "Sustainable Building Project", country: "Kenya", continent: "Africa", city: "Nairobi", cat: "Eco", price: "0 USD", img: "https://images.unsplash.com/photo-1489440543227-a6d3d9363c50?auto=format&fit=crop&w=500", incl: "Cultural Immersion + Food" },
+{ name: "Community Arts & Crafts", country: "Morocco", continent: "Africa", city: "Chefchaouen", cat: "Social", price: "45 USD", img: "https://images.unsplash.com/photo-1548048026-5a1a941d93d3?auto=format&fit=crop&w=500", incl: "Traditional Riad Stay" },
+// OCEANIA
+{ name: "Fruit Picking & Eco-Stay", country: "Australia", continent: "Oceania", city: "Queensland", cat: "Eco", price: "0 USD", img: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=500", incl: "Accommodation + Weekly Stipend" },
+{ name: "Marine Conservation Assist", country: "Fiji", continent: "Oceania", city: "Suva", cat: "Animals", price: "0 USD", img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=500", incl: "Diving Gear provided" }
 ];
-let currentCat = '';
+let activeCat = '';
 function render(data) {
 const grid = document.getElementById('grid');
-grid.innerHTML = data.map((p, index) => `
-<div class="card" style="animation-delay: ${index * 0.1}s">
-<div class="card-header">
-<img src="${p.img}" alt="${p.name}">
-<div class="price-badge">${p.price}</div>
+grid.innerHTML = data.map(p => `
+<div class="card">
+<div class="card-img" style="background-image: url('${p.img}')">
+<span class="continent-tag">${p.continent}</span>
 </div>
-<div class="card-body">
+<div class="card-content">
 <span class="card-tag">${p.cat}</span>
 <h3 class="card-title">${p.name}</h3>
-<div class="info-item"><i class="fas fa-map-marker-alt"></i> ${p.city}, ${p.country}</div>
-<div class="info-item"><i class="fas fa-clock"></i> Duration: ${p.duration}</div>
-<div class="info-item"><i class="fas fa-check-circle"></i> ${p.inclusion}</div>
-<button class="btn-apply" onclick="alert('Redirecting to organization...')">Apply Now</button>
+<div class="details"><i class="fas fa-map-marker-alt"></i> ${p.city}, ${p.country}</div>
+<div class="details"><i class="fas fa-check-circle"></i> ${p.incl}</div>
+<div class="details"><i class="fas fa-tag"></i> Admin Fee: ${p.price}</div>
+<button class="btn-apply">More Info</button>
 </div>
 </div>
 `).join('');
 }
 function filter() {
 const text = document.getElementById('searchInput').value.toLowerCase();
+const continent = document.getElementById('continentFilter').value;
 const filtered = programs.filter(p => {
 const matchesText = p.name.toLowerCase().includes(text) || p.country.toLowerCase().includes(text);
-const matchesCat = currentCat === '' || p.cat === currentCat || p.country === currentCat;
-return matchesText && matchesCat;
+const matchesContinent = continent === '' || p.continent === continent;
+const matchesCat = activeCat === '' || p.cat === activeCat;
+return matchesText && matchesContinent && matchesCat;
 });
 render(filtered);
 }
-function setCategory(el, cat) {
+function setCat(el, cat) {
 document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
 el.classList.add('active');
-currentCat = cat;
+activeCat = cat;
 filter();
 }
 render(programs);
