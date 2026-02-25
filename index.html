@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ArgenVoluntarios 2027 | Viajá Ayudando</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<style>
+:root {
+--primary: #0081A7; /* Azul confianza */
+--secondary: #00AFB9;
+--accent: #F07167; /* Coral aventura */
+--light: #FDFCDC;
+--dark: #212529;
+--white: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+body { background-color: #f8f9fa; color: var(--dark); line-height: 1.6; }
+header {
+background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+background-size: cover; background-position: center;
+color: var(--white); padding: 80px 20px; text-align: center;
+}
+.container { max-width: 1200px; margin: auto; padding: 20px; }
+/* Buscador y Filtros */
+.search-box {
+background: var(--white); padding: 30px; border-radius: 15px;
+margin-top: -60px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.filter-row {
+display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 15px; margin-top: 15px;
+}
+input, select {
+width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; outline: none; transition: 0.3s;
+}
+input:focus { border-color: var(--primary); }
+.btn {
+background: var(--accent); color: var(--white); border: none;
+padding: 12px 20px; border-radius: 10px; cursor: pointer; font-weight: 600;
+transition: 0.3s; display: inline-block; text-align: center;
+}
+.btn:hover { background: #d65a50; transform: scale(1.02); }
+/* Tarjetas */
+.programs-grid {
+display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 25px; margin-top: 40px;
+}
+.card {
+background: var(--white); border-radius: 15px; overflow: hidden;
+box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative;
+}
+.card-img { height: 180px; background-size: cover; background-position: center; }
+.badge-price {
+position: absolute; top: 15px; right: 15px;
+background: #2D6A4F; color: white; padding: 6px 12px; border-radius: 50px; font-weight: bold;
+}
+.card-body { padding: 20px; }
+.tag { font-size: 0.75rem; font-weight: 700; color: var(--primary); text-transform: uppercase; }
+.card-title { margin: 8px 0; font-size: 1.2rem; color: #333; }
+.info-row { font-size: 0.9rem; color: #666; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
+/* Sección Consejos Arg */
+.arg-tips {
+background: #e9f5f8; padding: 40px; border-radius: 15px; margin: 50px 0;
+border-left: 8px solid var(--primary);
+}
+.footer { text-align: center; padding: 40px; color: #888; font-size: 0.9rem; }
+</style>
+</head><body>
+<header>
+</header><h1>Explorá el Mundo desde Argentina</h1>
+<p>Voluntariados Ene-Feb 2027 con presupuesto "Gasolero"</p>
+
+<div class="container">
+<section class="search-box">
+<input id="searchInput" placeholder="Buscá por destino o actividad (ej: Tortugas, Brasil, Hostel)..." onkeyup="filterData()" type="text">
+</section><div class="filter-row">
+<select id="filterCat" onchange="filterData()"><option value="">Categoría</option><option value="Eco">Ecovillas &amp; Granja</option><option value="Social">Impacto Social</option><option value="Hostel">Intercambio Hostel</option></select>
+<select id="filterDest" onchange="filterData()"><option value="">Destino</option><option value="Brasil">Brasil (Vuelo barato)</option><option value="Peru">Perú / Bolivia</option><option value="Europa">Europa (Becas)</option></select>
+
+</div>
+
+<div id="programsGrid" class="programs-grid">
+</div>
+<section class="arg-tips">
+</section><h2>&#127462;&#127479; Tips Especiales para Argentinos</h2>
+<div class="filter-row" style="">
+<div>
+<h4> Vuelos y Pasajes</h4>
+<p>Para no pasarte de 500&#8364;, priorizá <strong>Brasil o Uruguay</strong>. Usá millas o buscá "Low Cost" desde Foz do Iguaçu (cruzando por Iguazú).</p>
+</div>
+<div>
+<h4> Impuesto PAIS / AFIP</h4>
+<p>Recordá que los precios en plataformas internacionales se cobran en
+USD. Considerá el valor del "Dólar Tarjeta" al pagar membresías.</p>
+</div>
+<div>
+<h4> Asistencia al Viajero</h4>
+<p>Es vital. Si tenés tarjeta de crédito Gold o Black, consultá si tenés cobertura incluida para ahorrar ese gasto.</p>
+</div>
+</div>
+
+<div class="search-box">
+<h3>¿Querés que te avisemos de nuevas convocatorias?</h3>
+<p>Dejanos tu email y te mandamos alertas para Enero 2027.</p>
+<form style="margin-top: 15px;">
+<input placeholder="tu-email@gmail.com" required="" type="email">
+<button type="submit" class="btn">Suscribirme</button>
+</form>
+</div>
+<footer class="footer">
+© 2026 ArgenVoluntarios - Preparando el camino para el 2027.
+</footer>
+</div>
+<script>
+const data = [
+{ name: "Eco-comunidad en Florianópolis", org: "Worldpackers", country: "Brasil", cat: "Eco", cost: 49, img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400", incl: "Cama, Almuerzo, Bicicletas", note: "Vuelo desde BUE: aprox 250-350 USD." },
+{ name: "Cuidado de Alpacas", org: "WWOOF Peru", country: "Peru", city: "Cusco", cat: "Eco", cost: 0, img: "https://images.unsplash.com/photo-1589441956133-6a5706e3d17a?auto=format&fit=crop&w=400", incl: "Alojamiento y 3 comidas", note: "Llegar vía terrestre desde Salta es muy económico." },
+{ name: "Beca Cuerpo Europeo (ESC)", org: "Erasmus+", country: "Europa", city: "Varios", cat: "Social", cost: 0, img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400", incl: "Pasajes, Seguro y Comida", note: "Única opción en Europa que cubre el vuelo desde Arg." },
+{ name: "Recepción y Social Media", org: "Worldpackers", country: "Brasil", city: "Río de Janeiro", cat: "Hostel", cost: 49, img: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=400", incl: "Cama y Desayuno", note: "Ideal para 18 años sin experiencia. Solo necesitás DNI." },
+{ name: "Escuela Comunitaria", org: "Volunteer SA", country: "Bolivia", city: "La Paz", cat: "Social", cost: 0, img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400", incl: "Alojamiento compartido", note: "Costo de vida muy bajo. Podés ir en micro." },
+{ name: "Surf Camp Help", org: "Workaway", country: "Brasil", city: "Itacaré", cat: "Hostel", cost: 45, img: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=400", incl: "Cama y Clases de Surf", note: "Piden 4h de ayuda diaria." }
+];
+function render(items) {
+const grid = document.getElementById('programsGrid');
+grid.innerHTML = items.map(p => `
+<div class="card">
+<div class="card-img" style="background-image: url('${p.img}')">
+<span class="badge-price">${p.cost === 0 ? 'BECADO' : p.cost + ' USD'}</span>
+</div>
+<div class="card-body">
+<span class="tag">${p.cat}</span>
+<h3 class="card-title">${p.name}</h3>
+<div class="info-row"><i class="fas fa-map-marker-alt"></i> ${p.city || ''} ${p.country}</div>
+<div class="info-row"><i class="fas fa-check-circle"></i> ${p.incl}</div>
+<p style="font-size: 0.8rem; background: #fff3cd; padding: 5px; border-radius: 5px; margin-top: 10px;">
+<strong>Tip Arg:</strong> ${p.note}
+</p>
+<button class="btn" style="width:100%; margin-top:15px;" onclick="window.open('https://www.worldpackers.com/es', '_blank')">Ver en ${p.org}</button>
+</div>
+</div>
+`).join('');
+}
+function filterData() {
+const text = document.getElementById('searchInput').value.toLowerCase();
+const cat = document.getElementById('filterCat').value;
+const dest = document.getElementById('filterDest').value;
+const filtered = data.filter(p => {
+return (p.name.toLowerCase().includes(text) || p.country.toLowerCase().includes(text)) &&
+(cat === "" || p.cat === cat) &&
+(dest === "" || p.country.includes(dest));
+});
+render(filtered);
+}
+let asc = true;
+function sortByPrice() {
+const sorted = [...data].sort((a, b) => asc ? a.cost - b.cost : b.cost - a.cost);
+asc = !asc;
+render(sorted);
+}
+render(data);
+</script>
+</body></html>
